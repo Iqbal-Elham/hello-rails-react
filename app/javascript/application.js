@@ -1,12 +1,23 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Greetings from './components/Greetings';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
-  return (<h1>Hello World!</h1>);
+  const router = createBrowserRouter([
+    {
+      path: '',
+      element: <Greetings />,
+    },
+  ]);
+  return (
+    <Provider store={store}>
+      helloworld
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));
