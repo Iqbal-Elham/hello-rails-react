@@ -10,7 +10,7 @@ function Greetings() {
   }, []);
 
   return (
-    <div class="tv-container">
+    <div>
       <h1 id="greeting">{message.greeting}</h1>
     </div>
   );

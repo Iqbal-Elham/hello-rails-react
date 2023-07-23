@@ -1,5 +1,5 @@
 class MessageController < ApplicationController
-  def random
+  def index
     messages = Message.all
     message = messages[rand(messages.size)]
     render json: message
